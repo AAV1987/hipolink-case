@@ -1,1 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кейсы</title>
 
+<style>
+body {
+  margin: 0;
+  padding: 12px;
+  background: transparent;
+  font-family: "Comfortaa", sans-serif;
+}
+
+/* ОСНОВНОЙ КОНТЕЙНЕР */
+.acc {
+  max-width: 680px;
+  width: 92%;
+  margin: 0 auto;
+}
+
+/* ГЛАВНЫЙ АККОРДЕОН */
+.acc__toggler {position:absolute;opacity:0;pointer-events:none;}
+
+.acc-header {
+  position:relative;
+  height:60px;
+  display:flex;
+  align-items:center;
+  padding:0 16px;
+  border-radius:14px;
+  cursor:pointer;
+  user-select:none;
+  color:#fff;
+  background:rgba(166,29,69,0.45);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.25),
+    0 8px 24px rgba(166,29,69,0.35),
+    0 2px 6px rgba(0,0,0,0.35);
+  transition:0.25s;
+}
+
+.acc-header:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.35),
+    0 10px 28px rgba(166,29,69,0.45),
+    0 3px 8px rgba(0,0,0,0.45);
+  transform:translateY(-1px);
+}
+
+.label-text {flex:1;text-align:center;}
+.chevron {transition:0.3s;}
+
+.acc__toggler:checked+label .chevron {
+  transform: rotate(180deg);
+}
+
+.acc-body {
+  display:grid;
+  grid-template-rows:0fr;
+  transition:grid-template-rows .35s ease;
+}
+
+.acc__toggler:checked ~ .acc-body {
+  grid-template-rows:1fr;
+}
+
+.acc-content {
+  overflow:hidden;
+  margin-top:10px;
+  padding:0 10px 10px;
+  border-radius:14px;
+  color:#fff;
+  background:rgba(0,0,0,0.45);
+  border:1px solid rgba(166,29,69,0.3);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.25),
+    0 6px 18px rgba(166,29,69,0.25),
+    0 1px 5px rgba(0,0,0,0.35);
+}
+
+.acc-content ul {
+  list-style:none;
+  padding:0;
+  margin:12px 0;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+/* МИНИ-АККОРДЕОНЫ */
+.mini-toggle {position:absolute;opacity:0;pointer-events:none;}
+
+.mini-item {
+  position:relative;
+  padding:12px 14px;
+  background:rgba(0,0,0,0.35);
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.15);
+  cursor:pointer;
+  color:#fff;
+}
+
+.mini-title {display:block;padding-right:16px;font-size:15px;text-align:left;}
+
+.mini-chevron {
+  position:absolute;
+  right:12px;
+  top:50%;
+  transform:translateY(-50%);
+  transition:0.25s;
+}
+
+.mini-panel {
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .35s ease;
+  margin-top:8px;
+  font-size:14px;
+  line-height:1.4;
+}
+
+.mini-toggle:checked ~ .mini-panel {
+  max-height:5000px;
+}
+
+.mini-toggle:checked + label .mini-chevron {
+  transform:rotate(180deg);
+}
+</style>
+
+<script>
+function sendHeight() {
+  const h = document.body.scrollHeight;
+  parent.postMessage({ frameHeight: h }, "*");
+}
+window.onload = sendHeight;
+window.onresize = sendHeight;
+</script>
+</head>
+
+<body>
+
+<div class="acc">
+
+<input id="ach" class="acc__toggler" type="checkbox">
+<label for="ach" class="acc-header">
+  <span class="label-text">Достижения</span>
+  <span class="chevron">▾</span>
+</label>
+
+<div class="acc-body">
+<div class="acc-content">
+<ul>
+
+<!-- КЕЙС 1 -->
+<li class="mini-item">
+  <input id="m1" class="mini-toggle" type="checkbox">
+  <label for="m1">
+    <span class="mini-title">Кейс 1 – Антикризисный разворот оператора связи</span>
+    <span class="mini-chevron">▾</span>
+  </label>
+  <div class="mini-panel">
+<p>Крупный оператор фиксированной и мобильной связи оказался в состоянии глубокой управленческой и финансовой разбалансировки, что создавало риски для инфраструктуры и стабильности услуг...</p>
+<p>После анализа я перестроил систему управления...</p>
+<p>Работа с персоналом стала ключевым элементом восстановления...</p>
+  </div>
+</li>
+
+<!-- КЕЙС 2 -->
+<li class="mini-item">
+  <input id="m2" class="mini-toggle" type="checkbox">
+  <label for="m2">
+    <span class="mini-title">Кейс 2 – Полная легализация и перезапуск сети АЗС</span>
+    <span class="mini-chevron">▾</span>
+  </label>
+  <div class="mini-panel">
+<p>Сеть из тринадцати автозаправочных станций...</p>
+<p>Я организовал регистрацию юридических лиц...</p>
+<p>Продажи сопутствующей продукции выросли более чем...</p>
+  </div>
+</li>
+
+<!-- КЕЙС 3 -->
+<li class="mini-item">
+  <input id="m3" class="mini-toggle" type="checkbox">
+  <label for="m3">
+    <span class="mini-title">Кейс 3 – Сопровождение инвестиционного проекта 100 млн</span>
+    <span class="mini-chevron">▾</span>
+  </label>
+  <div class="mini-panel">
+<p>Инвестор планировал вложить около ста миллионов...</p>
+<p>Я организовал разработку проекта планировки территории...</p>
+<p>Финансовые показатели подтвердили корректность выбранной схемы...</p>
+  </div>
+</li>
+
+<!-- КЕЙС 4 -->
+<li class="mini-item">
+  <input id="m4" class="mini-toggle" type="checkbox">
+  <label for="m4">
+    <span class="mini-title">Кейс 4 – Исключение неактивного участника</span>
+    <span class="mini-chevron">▾</span>
+  </label>
+  <div class="mini-panel">
+<p>Компания столкнулась с ситуацией, когда один из учредителей перестал участвовать...</p>
+<p>Суд удовлетворил требования и обязал участника продать долю...</p>
+<p>Оборот вырос с 220 млн до 310 млн...</p>
+  </div>
+</li>
+
+<!-- КЕЙС 5 -->
+<li class="mini-item">
+  <input id="m5" class="mini-toggle" type="checkbox">
+  <label for="m5">
+    <span class="mini-title">Кейс 5 – Восстановление корпоративных прав</span>
+    <span class="mini-chevron">▾</span>
+  </label>
+  <div class="mini-panel">
+<p>Учредительница обнаружила протоколы с поддельными подписями...</p>
+<p>Суд признал документы недействительными...</p>
+<p>Корпоративные права восстановлены полностью...</p>
+  </div>
+</li>
+
+<!-- КЕЙС 6 -->
+<li class="mini-item">
+  <input id="m6" class="mini-toggle" type="checkbox">
+  <label for="m6">
+    <span class="mini-title">Кейс 6 – Восстановление наследственных прав</span>
+    <span class="mini-chevron">▾</span>
+  </label>
+  <div class="mini-panel">
+<p>Наследственная цепочка была нарушена дважды...</p>
+<p>Суд признал наследника принявшим наследство...</p>
+<p>Объект оформлен без долгов и споров...</p>
+  </div>
+</li>
+
+<!-- КЕЙС 7 -->
+<li class="mini-item">
+  <input id="m7" class="mini-toggle" type="checkbox">
+  <label for="m7">
+    <span class="mini-title">Кейс 7 – Остановка незаконного сноса</span>
+    <span class="mini-chevron">▾</span>
+  </label>
+  <div class="mini-panel">
+<p>После пожара администрация вынесла постановление о сносе...</p>
+<p>Удалось доказать нарушение процедуры...</p>
+<p>Жильцы сохранили свои квартиры...</p>
+  </div>
+</li>
+
+<!-- КЕЙС 8 -->
+<li class="mini-item">
+  <input id="m8" class="mini-toggle" type="checkbox">
+  <label for="m8">
+    <span class="mini-title">Кейс 8 – Защита четырёх домов от сноса</span>
+    <span class="mini-chevron">▾</span>
+  </label>
+  <div class="mini-panel">
+<p>Построены четыре индивидуальных дома...</p>
+<p>Экспертизы подтвердили соответствие ИЖС...</p>
+<p>Собственник сохранил все четыре объекта...</p>
+  </div>
+</li>
+
+</ul>
+</div>
+</div>
+</div>
+
+</body>
+</html>

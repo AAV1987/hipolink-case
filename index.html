@@ -7,84 +7,74 @@
 <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
 
 <style>
-    body{
-        margin:0;
-        padding:0;
-        font-family:"Comfortaa", sans-serif;
-        background:transparent !important;
-        color:#fff;
-    }
-
-    .wrapper{
-        max-width:700px;
-        margin:0 auto;
-        padding:12px;
-        box-sizing:border-box;
-    }
-
-    button.main-toggle{
-        width:100%;
-        padding:16px;
-        font-size:18px;
-        font-weight:700;
-        border-radius:12px;
-        cursor:pointer;
-        border:none;
-        background:#a61d45;
-        color:white;
-    }
-
-    .main-body{
-        overflow:hidden;
-        height:0;
-        transition:height .35s ease;
-        margin-top:12px;
-    }
-
-    .case{
-        background:rgba(0,0,0,0.35);
-        border:1px solid rgba(255,255,255,0.22);
-        border-radius:12px;
-        padding:14px;
-        margin-bottom:10px;
-        cursor:pointer;
-        position:relative;
-    }
-
-    .case-title{
-        font-size:15px;
-        font-weight:700;
-        padding-right:26px;
-    }
-
-    .arrow{
-        position:absolute;
-        right:14px;
-        top:50%;
-        transform:translateY(-50%);
-        transition:.3s;
-    }
-
-    .case.active .arrow{
-        transform:translateY(-50%) rotate(180deg);
-    }
-
-    .case-content{
-        overflow:hidden;
-        height:0;
-        transition:height .35s ease;
-        margin-top:8px;
-        font-size:14px;
-        line-height:1.5;
-    }
-
-    .case-content p{
-        margin:0 0 10px 0;
-    }
-
-    .case-content p:last-child{
-        margin-bottom:0;
-    }
+body{
+    margin:0;
+    padding:0;
+    font-family:"Comfortaa",sans-serif;
+    background:transparent!important;
+    color:#fff;
+}
+.wrapper{
+    max-width:700px;
+    margin:0 auto;
+    padding:12px;
+    box-sizing:border-box;
+}
+button.main-toggle{
+    width:100%;
+    padding:16px;
+    font-size:18px;
+    font-weight:700;
+    border-radius:12px;
+    cursor:pointer;
+    border:none;
+    background:#a61d45;
+    color:#fff;
+}
+.main-body{
+    overflow:hidden;
+    height:0;
+    transition:height .35s ease;
+    margin-top:12px;
+}
+.case{
+    background:rgba(0,0,0,0.35);
+    border:1px solid rgba(255,255,255,0.22);
+    border-radius:12px;
+    padding:14px;
+    margin-bottom:10px;
+    cursor:pointer;
+    position:relative;
+}
+.case-title{
+    font-size:15px;
+    font-weight:700;
+    padding-right:26px;
+}
+.arrow{
+    position:absolute;
+    right:14px;
+    top:50%;
+    transform:translateY(-50%);
+    transition:.35s;
+}
+.case.active .arrow{
+    transform:translateY(-50%) rotate(180deg);
+}
+.case-content{
+    overflow:hidden;
+    height:0;
+    transition:height .35s ease;
+    margin-top:8px;
+    font-size:14px;
+    line-height:1.5;
+}
+.case-content p{
+    margin:0 0 10px 0;
+}
+.case-content p:last-child{
+    margin-bottom:0;
+}
 </style>
 </head>
 
@@ -101,31 +91,31 @@
             <div class="case-title">Кейс 1. Антикризисный разворот крупного регионального оператора связи</div>
             <div class="arrow">▾</div>
             <div class="case-content" data-open="0">
-                <p>Крупный оператор фиксированной и мобильной связи подошёл к моменту кризиса...</p>
-                <p>На основе собранных данных я перестроил управленческую модель...</p>
-                <p>Работа с персоналом заняла важное место...</p>
+                <p>Крупный оператор фиксированной и мобильной связи оказался…</p>
+                <p>После анализа я перестроил систему управления…</p>
+                <p>Работа с персоналом стала ключевым элементом…</p>
             </div>
         </div>
 
         <!-- ================= КЕЙС 2 ================= -->
         <div class="case" onclick="toggleCase(this)">
-            <div class="case-title">Кейс 2. Полная легализация и перезапуск сети АЗС</div>
+            <div class="case-title">Кейс 2. Полная легализация и операционный перезапуск сети АЗС</div>
             <div class="arrow">▾</div>
             <div class="case-content" data-open="0">
-                <p>Сеть из тринадцати автозаправочных станций оказалась в юридически неопределённом положении...</p>
-                <p>Я организовал регистрацию юридических лиц, обновил документы...</p>
-                <p>Рост продаж, экономия, повышение рентабельности...</p>
+                <p>Сеть из тринадцати АЗС оказалась в юридически неопределённом статусе…</p>
+                <p>Я восстановил цепочки собственности, лицензии, земельные права…</p>
+                <p>Операционный перезапуск дал рост продаж более чем в два раза…</p>
             </div>
         </div>
 
         <!-- ================= КЕЙС 3 ================= -->
         <div class="case" onclick="toggleCase(this)">
-            <div class="case-title">Кейс 3. Инвестиционный проект на сто миллионов рублей</div>
+            <div class="case-title">Кейс 3. Инвестиционный проект на 100 млн</div>
             <div class="arrow">▾</div>
             <div class="case-content" data-open="0">
-                <p>Инвестор планировал вложить сто миллионов рублей...</p>
-                <p>Градостроительные согласования, архитектурная концепция...</p>
-                <p>Финансовые результаты подтвердили стратегию...</p>
+                <p>Инвестор планировал строительство туристического комплекса…</p>
+                <p>Градостроительные решения, ППТ, ПМТ, ТУ, архитектура…</p>
+                <p>Финансовый результат — от 3 до 6 млн выручки в месяц…</p>
             </div>
         </div>
 
@@ -134,8 +124,8 @@
             <div class="case-title">Кейс 4. Исключение неактивного участника и рост оборота</div>
             <div class="arrow">▾</div>
             <div class="case-content" data-open="0">
-                <p>Компания столкнулась с ситуацией блокировки управления...</p>
-                <p>После устранения конфликта оборот вырос с 220 до 310 млн...</p>
+                <p>Я доказал необходимость исключения участника, блокирующего развитие…</p>
+                <p>Оборот вырос с 220 до 310 млн рублей…</p>
             </div>
         </div>
 
@@ -144,47 +134,50 @@
             <div class="case-title">Кейс 5. Восстановление корпоративных прав</div>
             <div class="arrow">▾</div>
             <div class="case-content" data-open="0">
-                <p>Обнаружены поддельные протоколы. Проведены экспертизы...</p>
-                <p>Суд отменил изменения в ЕГРЮЛ и восстановил управление...</p>
+                <p>Обнаружены поддельные протоколы, изменившие структуру управления…</p>
+                <p>Суд отменил решения и восстановил корпоративные права клиента…</p>
             </div>
         </div>
 
         <!-- ================= КЕЙС 6 ================= -->
         <div class="case" onclick="toggleCase(this)">
-            <div class="case-title">Кейс 6. Восстановление наследственных прав при двойном пропуске сроков</div>
+            <div class="case-title">Кейс 6. Восстановление наследственных прав</div>
             <div class="arrow">▾</div>
             <div class="case-content" data-open="0">
-                <p>Наследственная цепочка дважды нарушена...</p>
-                <p>Суд признал наследника принявшим наследство по двум эпизодам...</p>
+                <p>Наследственная цепочка была нарушена дважды…</p>
+                <p>Суд восстановил права по обоим звеньям и признал наследство…</p>
             </div>
         </div>
 
         <!-- ================= КЕЙС 7 ================= -->
         <div class="case" onclick="toggleCase(this)">
-            <div class="case-title">Кейс 7. Остановка незаконного сноса после пожара</div>
+            <div class="case-title">Кейс 7. Остановка незаконного сноса дома</div>
             <div class="arrow">▾</div>
             <div class="case-content" data-open="0">
-                <p>Постановление о сносе было основано на заключении без выезда...</p>
-                <p>В кассации удалось доказать нарушение процедуры...</p>
+                <p>Постановление о сносе было основано на заключении без выезда…</p>
+                <p>Суд отменил постановление, жильцы сохранили квартиры…</p>
             </div>
         </div>
 
         <!-- ================= КЕЙС 8 ================= -->
         <div class="case" onclick="toggleCase(this)">
-            <div class="case-title">Кейс 8. Защита четырёх домов от неправомерного сноса</div>
+            <div class="case-title">Кейс 8. Защита четырёх жилых домов от сноса</div>
             <div class="arrow">▾</div>
             <div class="case-content" data-open="0">
-                <p>Органы контроля потребовали признания строений многоквартирными...</p>
-                <p>Экспертизы доказали соответствие ИЖС...</p>
+                <p>Инспекция требовала признать дома многоквартирными…</p>
+                <p>Экспертизы подтвердили ИЖС, суды подтвердили законность…</p>
             </div>
         </div>
 
     </div>
 </div>
 
+
+<!-- ========== САМЫЙ ГЛАВНЫЙ БЛОК — РАБОЧИЙ РЕСАЙЗЕР ========== -->
 <script>
 function toggleMain(){
     const body = document.getElementById("mainBody");
+    if(!body) return;
 
     if(body.dataset.open === "1"){
         body.style.height = "0px";
@@ -199,8 +192,10 @@ function toggleMain(){
 }
 
 function toggleCase(el){
-    el.classList.toggle("active");
     const panel = el.querySelector(".case-content");
+    if(!panel) return;
+
+    el.classList.toggle("active");
 
     if(panel.dataset.open === "1"){
         panel.style.height = "0px";
@@ -211,16 +206,19 @@ function toggleCase(el){
     }
 
     const body = document.getElementById("mainBody");
-    body.style.height = "auto";
-    body.style.height = body.scrollHeight + "px";
+    if(body){
+        body.style.height = "auto";
+        body.style.height = body.scrollHeight + "px";
+    }
 
     smartResize();
 }
 
-/* Главный фикс высоты Hipolink */
 function forceAutoHeight(){
-    const h = document.documentElement.scrollHeight;
-    window.parent.postMessage({type:'resize', height:h}, '*');
+    const h = document.documentElement.scrollHeight || document.body.scrollHeight;
+    try{
+        window.parent.postMessage({type:'resize', height:h}, '*');
+    }catch(e){}
 }
 
 function smartResize(){

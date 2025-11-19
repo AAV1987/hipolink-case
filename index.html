@@ -99,7 +99,7 @@
 
     <div id="mainBody" class="main-body" data-open="0">
 
-        <!-- ===== КЕЙСИ ===== -->
+        <!-- ======= КЕЙСЫ ======= -->
 
         <!-- Кейс 1 -->
         <div class="case" onclick="toggleCase(this)">
@@ -108,7 +108,7 @@
             <div class="case-content" data-open="0">
                 <p>Крупный оператор фиксированной и мобильной связи подошёл к моменту кризиса...</p>
                 <p>На основе собранных данных я перестроил управленческую модель...</p>
-                <p>Работа с персоналом заняла важное место в общей стратегии...</p>
+                <p>Работа с персоналом заняла важное место...</p>
             </div>
         </div>
 
@@ -119,18 +119,18 @@
             <div class="case-content" data-open="0">
                 <p>Сеть из тринадцати автозаправочных станций...</p>
                 <p>Я организовал регистрацию юридических лиц...</p>
-                <p>Я переработал операционные процессы и внедрил систему стандартов...</p>
+                <p>Продажи выросли, процессы стабилизировались...</p>
             </div>
         </div>
 
         <!-- Кейс 3 -->
         <div class="case" onclick="toggleCase(this)">
-            <div class="case-title">Кейс 3. Сопровождение инвестиционного проекта</div>
+            <div class="case-title">Кейс 3. Инвестиционный проект стоимостью 100 млн рублей</div>
             <div class="arrow">▾</div>
             <div class="case-content" data-open="0">
-                <p>Инвестор планировал вложить около ста миллионов рублей...</p>
-                <p>Градостроительный блок работ включал проект планировки...</p>
-                <p>Первый этап принёс доход около трёх миллионов рублей...</p>
+                <p>Инвестор планировал вложить сто миллионов рублей...</p>
+                <p>Были разработаны ППТ, ПМТ, согласована архитектурная концепция...</p>
+                <p>Выручка превысила шесть миллионов рублей в месяц...</p>
             </div>
         </div>
 
@@ -139,9 +139,9 @@
             <div class="case-title">Кейс 4. Исключение неактивного участника</div>
             <div class="arrow">▾</div>
             <div class="case-content" data-open="0">
-                <p>Компания столкнулась с ситуацией...</p>
-                <p>Суд обязал участника продать долю...</p>
-                <p>После устранения конфликта компания смогла...</p>
+                <p>Участник блокировал ключевые решения...</p>
+                <p>Суд обязал продать долю...</p>
+                <p>Оборот вырос до 310 млн рублей...</p>
             </div>
         </div>
 
@@ -151,8 +151,8 @@
             <div class="arrow">▾</div>
             <div class="case-content" data-open="0">
                 <p>Учредительница обнаружила поддельные протоколы...</p>
-                <p>Судебный процесс включал несколько экспертиз...</p>
-                <p>Корпоративные права клиентки восстановлены полностью...</p>
+                <p>Экспертизы доказали отсутствие подписи...</p>
+                <p>Права полностью восстановлены...</p>
             </div>
         </div>
 
@@ -163,7 +163,7 @@
             <div class="case-content" data-open="0">
                 <p>Наследственная цепочка была нарушена дважды...</p>
                 <p>Суд признал наследника принявшим наследство...</p>
-                <p>Клиент получил полностью защищённый объект...</p>
+                <p>Риски взыскания исключены...</p>
             </div>
         </div>
 
@@ -172,20 +172,20 @@
             <div class="case-title">Кейс 7. Остановка незаконного сноса дома</div>
             <div class="arrow">▾</div>
             <div class="case-content" data-open="0">
-                <p>После пожара администрация подписала постановление...</p>
-                <p>Удалось доказать недопустимость заключения...</p>
-                <p>Постановление было отменено, жильцы сохранили квартиры...</p>
+                <p>Заключение было выполнено без выезда...</p>
+                <p>В кассации доказано нарушение процедуры...</p>
+                <p>Постановление отменено, жильцы сохранили квартиры...</p>
             </div>
         </div>
 
         <!-- Кейс 8 -->
         <div class="case" onclick="toggleCase(this)">
-            <div class="case-title">Кейс 8. Защита четырёх жилых домов</div>
+            <div class="case-title">Кейс 8. Защита четырёх жилых домов от сноса</div>
             <div class="arrow">▾</div>
             <div class="case-content" data-open="0">
-                <p>Собственник построил четыре индивидуальных дома...</p>
-                <p>Экспертизы подтвердили соответствие параметрам ИЖС...</p>
-                <p>Все суды признали строения законными...</p>
+                <p>Инспекция пыталась признать дома многоквартирными...</p>
+                <p>Экспертизы подтвердили соответствие ИЖС...</p>
+                <p>Все постройки признаны законными...</p>
             </div>
         </div>
 
@@ -193,7 +193,7 @@
 </div>
 
 <script>
-// ===== ГИБРИДНЫЙ АВТО-ПЕРЕСЧЁТ ВЫСОТЫ =====
+// ===== ГИБРИДНЫЙ АВТО-РЕСАЙЗ ДЛЯ HIPOLINK =====
 
 function sendHeight(){
     const height = document.body.scrollHeight;
@@ -227,32 +227,47 @@ function toggleMain(){
     sendHeight();
 }
 
-// ===== ОТКРЫТИЕ КЕЙСОВ (исправлено) =====
+// ===== ОТКРЫТИЕ КЕЙСОВ (ЖЕЛЕЗОБЕТОННЫЙ ВАРИАНТ) =====
 
 function toggleCase(el){
     el.classList.toggle("active");
-
     let panel = el.querySelector(".case-content");
 
     if(panel.dataset.open === "1"){
         panel.style.height = "0px";
         panel.dataset.open = "0";
         sendHeight();
-    } else {
-        panel.dataset.open = "1";
-
-        // ждём рендер → считаем correct scrollHeight
-        requestAnimationFrame(() => {
-            panel.style.height = panel.scrollHeight + "px";
-
-            requestAnimationFrame(() => {
-                let body = document.getElementById("mainBody");
-                body.style.height = "auto";
-                body.style.height = body.scrollHeight + "px";
-                sendHeight();
-            });
-        });
+        return;
     }
+
+    panel.dataset.open = "1";
+    panel.style.height = "auto";
+
+    let last = 0;
+    let count = 0;
+
+    function expand(){
+        const h = panel.scrollHeight;
+
+        if(h !== last){
+            panel.style.height = h + "px";
+            last = h;
+            count = 0;
+        } else {
+            count++;
+        }
+
+        if(count < 4){
+            requestAnimationFrame(expand);
+        } else {
+            let main = document.getElementById("mainBody");
+            main.style.height = "auto";
+            main.style.height = main.scrollHeight + "px";
+            sendHeight();
+        }
+    }
+
+    requestAnimationFrame(expand);
 }
 </script>
 

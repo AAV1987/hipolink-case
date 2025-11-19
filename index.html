@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Достижения – кейсы</title>
+<title>Достижения</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
 
@@ -66,6 +66,145 @@
         top:50%;
         transform:translateY(-50%);
         transition:.3s;
+    }
+
+    .case-content{
+        overflow:hidden;
+        max-height:0;
+        transition:max-height .35s ease;
+        margin-top:10px;
+        font-size:15px;
+        line-height:1.55;
+    }
+
+    .case.active .arrow{
+        transform:translateY(-50%) rotate(180deg);
+    }
+</style>
+
+</head>
+<body>
+
+<div class="wrapper">
+
+    <button class="main-toggle" onclick="toggleMain()">Достижения ▾</button>
+
+    <div id="mainBody" class="main-body">
+
+        <!-- КЕЙСЫ → все уже вставлены -->
+
+        <div class="case" onclick="toggleCase(this)">
+            <div class="case-title">Кейс 1. Антикризисный разворот крупного регионального оператора связи</div>
+            <div class="arrow">▾</div>
+            <div class="case-content">
+                <p>Крупный оператор фиксированной и мобильной связи подошёл к моменту кризиса с серьёзной управленческой и финансовой дезорганизацией...</p>
+                <p>На основе собранных данных я перестроил управленческую модель...</p>
+                <p>Работа с персоналом заняла важное место...</p>
+            </div>
+        </div>
+
+        <div class="case" onclick="toggleCase(this)">
+            <div class="case-title">Кейс 2. Полная легализация и перезапуск сети АЗС</div>
+            <div class="arrow">▾</div>
+            <div class="case-content">
+                <p>Сеть из тринадцати автозаправочных станций...</p>
+                <p>Я организовал регистрацию юридических лиц...</p>
+                <p>Я переработал операционные процессы...</p>
+            </div>
+        </div>
+
+        <div class="case" onclick="toggleCase(this)">
+            <div class="case-title">Кейс 3. Сопровождение инвестиционного проекта на 100 млн ₽</div>
+            <div class="arrow">▾</div>
+            <div class="case-content">
+                <p>Инвестор планировал вложить около ста миллионов рублей...</p>
+                <p>Я организовал разработку проекта планировки территории...</p>
+                <p>Первый этап дал доход около трёх миллионов рублей...</p>
+            </div>
+        </div>
+
+        <div class="case" onclick="toggleCase(this)">
+            <div class="case-title">Кейс 4. Исключение участника и рост оборота</div>
+            <div class="arrow">▾</div>
+            <div class="case-content">
+                <p>Компания столкнулась с ситуацией...</p>
+                <p>Суд удовлетворил требования и обязал участника продать долю...</p>
+                <p>Исключение токсичного участника восстановило управляемость...</p>
+            </div>
+        </div>
+
+        <div class="case" onclick="toggleCase(this)">
+            <div class="case-title">Кейс 5. Восстановление корпоративных прав после подделки протоколов</div>
+            <div class="arrow">▾</div>
+            <div class="case-content">
+                <p>Учредительница обнаружила поддельные документы...</p>
+                <p>Судебный процесс включал экспертизы...</p>
+                <p>Права были полностью восстановлены...</p>
+            </div>
+        </div>
+
+        <div class="case" onclick="toggleCase(this)">
+            <div class="case-title">Кейс 6. Восстановление наследственных прав</div>
+            <div class="arrow">▾</div>
+            <div class="case-content">
+                <p>Наследственная цепочка была нарушена дважды...</p>
+                <p>Суд признал наследника принявшим наследство...</p>
+                <p>Клиент получил чистый объект без долгов...</p>
+            </div>
+        </div>
+
+        <div class="case" onclick="toggleCase(this)">
+            <div class="case-title">Кейс 7. Остановка незаконного сноса дома</div>
+            <div class="arrow">▾</div>
+            <div class="case-content">
+                <p>После пожара администрация издала постановление...</p>
+                <p>В кассации удалось доказать недопустимость заключения...</p>
+                <p>Жильцы сохранили квартиры...</p>
+            </div>
+        </div>
+
+        <div class="case" onclick="toggleCase(this)">
+            <div class="case-title">Кейс 8. Защита четырёх домов от сноса</div>
+            <div class="arrow">▾</div>
+            <div class="case-content">
+                <p>Собственник построил четыре дома...</p>
+                <p>Были назначены экспертизы...</p>
+                <p>Требование о сносе отклонено...</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+function toggleMain(){
+    let body = document.getElementById("mainBody");
+    if(body.style.maxHeight){
+        body.style.maxHeight = null;
+    } else {
+        body.style.maxHeight = body.scrollHeight + "px";
+    }
+}
+
+function toggleCase(el){
+    el.classList.toggle("active");
+    let panel = el.querySelector(".case-content");
+    if(panel.style.maxHeight){
+        panel.style.maxHeight = null;
+    } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+}
+
+// отправляем высоту в Hipolink
+setInterval(() => {
+    const h = document.body.scrollHeight;
+    parent.postMessage({height:h}, "*");
+}, 300);
+</script>
+
+</body>
+</html>
     }
 
     .case-content{

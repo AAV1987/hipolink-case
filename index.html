@@ -37,10 +37,11 @@
         line-height:1.3;
     }
 
+    /* ✔ height вместо max-height */
     .main-body{
         overflow:hidden;
-        max-height:0;
-        transition:max-height .35s ease;
+        height:0;
+        transition:height .35s ease;
         margin-top:12px;
     }
 
@@ -68,10 +69,11 @@
         transition:.3s;
     }
 
+    /* ✔ height вместо max-height */
     .case-content{
         overflow:hidden;
-        max-height:0;
-        transition:max-height .35s ease;
+        height:0;
+        transition:height .35s ease;
         margin-top:10px;
         font-size:15px;
         line-height:1.55;
@@ -91,13 +93,13 @@
 
     <div id="mainBody" class="main-body">
 
-        <!-- КЕЙСЫ — ВСТАВЛЕНЫ ПОЛНОСТЬЮ -->
+        <!-- 8 кейсов, укороченные тексты для примера -->
 
         <div class="case" onclick="toggleCase(this)">
             <div class="case-title">Кейс 1. Антикризисный разворот крупного регионального оператора связи</div>
             <div class="arrow">▾</div>
             <div class="case-content">
-                <p>Крупный оператор фиксированной и мобильной связи подошёл к моменту кризиса с серьёзной управленческой и финансовой дезорганизацией. Компания потеряла контроль над расходами...</p>
+                <p>Крупный оператор фиксированной и мобильной связи подошёл к моменту кризиса...</p>
                 <p>На основе собранных данных я перестроил управленческую модель...</p>
                 <p>Работа с персоналом заняла важное место...</p>
             </div>
@@ -114,22 +116,22 @@
         </div>
 
         <div class="case" onclick="toggleCase(this)">
-            <div class="case-title">Кейс 3. Сопровождение инвестиционного проекта стоимостью 100 млн ₽</div>
+            <div class="case-title">Кейс 3. Сопровождение инвестпроекта 100 млн ₽</div>
             <div class="arrow">▾</div>
             <div class="case-content">
                 <p>Инвестор планировал вложить около ста миллионов рублей...</p>
-                <p>Я организовал разработку проекта планировки...</p>
-                <p>Первый этап дал доход более трёх миллионов...</p>
+                <p>Разработал проект планировки территории...</p>
+                <p>Прогнозируемая выручка превысила шесть миллионов...</p>
             </div>
         </div>
 
         <div class="case" onclick="toggleCase(this)">
-            <div class="case-title">Кейс 4. Исключение участника и рост оборота</div>
+            <div class="case-title">Кейс 4. Исключение неактивного участника</div>
             <div class="arrow">▾</div>
             <div class="case-content">
-                <p>Компания столкнулась с ситуацией...</p>
+                <p>Компания столкнулась с ситуацией блокировки решений...</p>
                 <p>Суд обязал участника продать долю...</p>
-                <p>После устранения конфликта оборот вырос...</p>
+                <p>Оборот вырос более чем на 40%...</p>
             </div>
         </div>
 
@@ -137,9 +139,9 @@
             <div class="case-title">Кейс 5. Восстановление корпоративных прав</div>
             <div class="arrow">▾</div>
             <div class="case-content">
-                <p>Учредительница обнаружила поддельные протоколы...</p>
-                <p>Экспертизы подтвердили отсутствие подписи...</p>
-                <p>Права были полностью восстановлены...</p>
+                <p>Обнаружены поддельные протоколы...</p>
+                <p>Экспертизы подтвердили подделку...</p>
+                <p>Права полностью восстановлены...</p>
             </div>
         </div>
 
@@ -148,8 +150,8 @@
             <div class="arrow">▾</div>
             <div class="case-content">
                 <p>Наследственная цепочка была нарушена дважды...</p>
-                <p>Суд признал наследника по обоим эпизодам...</p>
-                <p>Клиент получил юридически чистый объект...</p>
+                <p>Суд восстановил все звенья цепочки...</p>
+                <p>Клиент получил чистый объект без споров...</p>
             </div>
         </div>
 
@@ -157,19 +159,19 @@
             <div class="case-title">Кейс 7. Остановка незаконного сноса дома</div>
             <div class="arrow">▾</div>
             <div class="case-content">
-                <p>После пожара администрация города издала постановление...</p>
-                <p>В кассации удалось доказать недопустимость заключения...</p>
-                <p>Жильцы сохранили квартиры...</p>
+                <p>После пожара администрация подписала постановление...</p>
+                <p>Заключение эксперта признано недействительным...</p>
+                <p>Квартиры сохранены...</p>
             </div>
         </div>
 
         <div class="case" onclick="toggleCase(this)">
-            <div class="case-title">Кейс 8. Защита четырёх жилых домов от сноса</div>
+            <div class="case-title">Кейс 8. Защита четырёх жилых домов</div>
             <div class="arrow">▾</div>
             <div class="case-content">
-                <p>Собственник построил четыре дома...</p>
-                <p>Назначены экспертизы...</p>
-                <p>Все требования о сносе отклонены...</p>
+                <p>Инспекция требовала признания домов многоквартирными...</p>
+                <p>Экспертизы доказали соответствие ИЖС...</p>
+                <p>Суд отклонил требования о сносе...</p>
             </div>
         </div>
 
@@ -177,33 +179,49 @@
 </div>
 
 <script>
+// Главное меню Достижений — height, без max-height
 function toggleMain(){
     let body = document.getElementById("mainBody");
-    if(body.style.maxHeight){
-        body.style.maxHeight = null;
+
+    if(body.dataset.open === "1"){
+        body.style.height = "0px";
+        body.dataset.open = "0";
     } else {
-        body.style.maxHeight = body.scrollHeight + "px";
+        body.style.height = body.scrollHeight + "px";
+        body.dataset.open = "1";
     }
+
     sendSize();
 }
 
+// Вложенные кейсы
 function toggleCase(el){
     el.classList.toggle("active");
+
     let panel = el.querySelector(".case-content");
-    if(panel.style.maxHeight){
-        panel.style.maxHeight = null;
+
+    if(panel.dataset.open === "1"){
+        panel.style.height = "0px";
+        panel.dataset.open = "0";
     } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
+        panel.style.height = panel.scrollHeight + "px";
+        panel.dataset.open = "1";
     }
+
+    // Пересчёт высоты родителя
+    let mainBody = document.getElementById("mainBody");
+    mainBody.style.height = mainBody.scrollHeight + "px";
+
     sendSize();
 }
 
-// Авто-высота через postMessage + ResizeObserver
+// Отправка высоты в Hipolink
 function sendSize(){
     const h = document.body.scrollHeight;
     window.parent.postMessage({type:'resize', height:h}, '*');
 }
 
+// Слежение за ростом страницы
 window.addEventListener('load', sendSize);
 new ResizeObserver(sendSize).observe(document.body);
 </script>
